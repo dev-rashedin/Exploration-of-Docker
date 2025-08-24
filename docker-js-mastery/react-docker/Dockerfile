@@ -1,5 +1,5 @@
 # set the base image to create the image for react app
-FROM node:20-alpine
+FROM node:24.6.0-alpine3.22
 
 # create a user with permissions to run the app
 # -S -> create a system user
@@ -43,4 +43,4 @@ COPY . .
 EXPOSE 5173
 
 # command to run the app
-CMD npm run dev
+CMD ["npm", "run", "dev", "--", "--host"]
